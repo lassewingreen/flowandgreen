@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+ wordpress-fl:
+  image: wordpress
+  ports:
+   - "80:80"
+  links:
+   - db:mysql
+  volumes:
+   - "./flowandgreen/:/var/www/html/wp-content/themes/flowandgreen"
+  environment:
+   WORDPRESS_DB_PASSWORD: 46g452h45h
+
+ db:
+  image: mysql
+  volumes:
+   - "./db/:/var/lib/mysql"
+  environment:
+   MYSQL_ROOT_PASSWORD: 46g452h45h

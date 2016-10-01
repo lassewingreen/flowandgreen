@@ -1,0 +1,29 @@
+/*
+ Theme Name:   Flow & Green Child
+ Theme URI:    http://wingreen.dk
+ Description:  Twenty Sixteen Child Theme - Band Page
+ Author:       Lasse Wingreen
+ Author URI:   http://wingreen.dk
+ Template:     twentysixteen
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         dark,  responsive-layout, accessibility-ready
+ Text Domain:  twenty-sixteen-child
+*/
+
+.cover {
+
+  padding: 0 20px;
+}
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+#btnBook,
+#btnSprg{
+    display: inline-block;
+    vertical-align: top;
+
+}
