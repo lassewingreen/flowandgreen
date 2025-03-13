@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Videoer - Flow & Green</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+  <!-- Navbar (reuse from index.html) -->
+  <nav class="bg-white shadow py-4">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <a href="index.html" class="text-xl font-semibold text-green-600">Flow & Green</a>
+      <div class="space-x-6">
+        <a href="index.html" class="text-gray-700 hover:text-green-600">Hjem</a>
+        <a href="videos.html" class="text-gray-700 hover:text-green-600">Videoer</a>
+        <a href="kontakt.html" class="text-gray-700 hover:text-green-600">Kontakt</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="container mx-auto px-6 py-12">
+    <h2 class="text-3xl font-semibold mb-8 text-center">Udvalgte Videoer</h2>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Embed selected YouTube videos -->
+      <div class="aspect-w-16 aspect-h-9">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" class="w-full h-full" allowfullscreen></iframe>
+      </div>
+      <div class="aspect-w-16 aspect-h-9">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" class="w-full h-full" allowfullscreen></iframe>
+      </div>
+      <!-- Add more videos as needed -->
+    </div>
+  </section>
+
+  <footer class="text-center py-6 bg-gray-200">
+    &copy; 2025 Flow & Green. Alle rettigheder forbeholdes.
+  </footer>
+</body>
+</html>
