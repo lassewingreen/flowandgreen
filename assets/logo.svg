@@ -8,11 +8,13 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   viewBox="0 0 256 64"
+   viewBox="0 0 303.55243 66.319626"
    version="1.1"
    id="svg850"
    sodipodi:docname="logo.svg"
-   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">
+   inkscape:version="1.0.2 (e86c8708, 2021-01-15)"
+   width="303.55243"
+   height="66.319626">
   <metadata
      id="metadata854">
     <rdf:RDF>
@@ -21,6 +23,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -37,13 +40,18 @@
      inkscape:window-height="828"
      id="namedview852"
      showgrid="false"
-     inkscape:zoom="2.5866188"
+     inkscape:zoom="2.5640611"
      inkscape:cx="128"
      inkscape:cy="32"
      inkscape:window-x="0"
      inkscape:window-y="518"
      inkscape:window-maximized="0"
-     inkscape:current-layer="svg850" />
+     inkscape:current-layer="svg850"
+     inkscape:document-rotation="0"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
   <defs
      id="defs838">
     <linearGradient
@@ -65,10 +73,10 @@
        inkscape:collect="always"
        xlink:href="#g"
        id="linearGradient856"
-       x1="0.0018977244"
-       y1="7.2389919"
+       x1="0.0018977243"
+       y1="7.2389917"
        x2="27.630054"
-       y2="34.867148"
+       y2="34.867149"
        gradientTransform="scale(0.72389919,1.3814078)"
        gradientUnits="userSpaceOnUse" />
     <linearGradient
@@ -91,7 +99,7 @@
      y="0"
      style="stroke-width:1" />
   <g
-     transform="translate(24,4.9171246)"
+     transform="translate(24,4.9171245)"
      id="g846">
     <path
        d="M 20,10 V 38 A 10,10 0 1 1 14,29 V 10 Z"
