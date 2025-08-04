@@ -1,48 +1,223 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="da">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flow & Green - Bryllupsmusik Duo</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flow &amp; Green — Elegant livemusik til bryllupper</title>
+  <meta name="description" content="Flow &amp; Green er en intim vokal- og guitar-duo til vielse, reception og første dans. Moderne klassikere, nærvær og god lyd."/>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme: { extend: {
+    fontFamily: { display: ['Poppins','ui-sans-serif','system-ui'], body: ['Inter','ui-sans-serif','system-ui'] },
+    colors: { ink: '#0b1020' }
+  }}};</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/assets/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "name": "Flow & Green",
+    "foundingLocation": "Danmark",
+    "genre": "Bryllupsmusik",
+    "areaServed": "Danmark",
+    "url": "https://YOUR-PAGES-URL",
+    "sameAs": ["https://www.instagram.com/flowandgreen/", "https://www.youtube.com/@flowandgreen"],
+    "contactPoint": { "@type": "ContactPoint", "contactType": "Booking", "email": "flowandgreen@gmail.com" }
+  }
+  </script>
 </head>
-<body class="bg-gray-50">
-  <!-- Navbar -->
-  <nav class="bg-white shadow py-4">
-    <div class="container mx-auto px-6 flex justify-between items-center">
-      <a href="index.html" class="text-xl font-semibold text-green-600">Flow & Green</a>
-      <div class="space-x-6">
-        <a href="index.html" class="text-gray-700 hover:text-green-600">Hjem</a>
-        <a href="videos.html" class="text-gray-700 hover:text-green-600">Videoer</a>
-        <a href="kontakt.html" class="text-gray-700 hover:text-green-600">Kontakt</a>
+<body class="bg-ink text-slate-100 font-body">
+  <!-- NAV -->
+  <header class="sticky top-0 z-40 backdrop-blur border-b border-white/10">
+    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="#" class="flex items-center gap-3">
+        <img src="/assets/logo.svg" alt="Flow &amp; Green" class="h-8 w-auto">
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <a href="#music" class="hover:text-white/90">Hør os</a>
+        <a href="#repertoire" class="hover:text-white/90">Repertoire</a>
+        <a href="#packages" class="hover:text-white/90">Pakker</a>
+        <a href="#testimonials" class="hover:text-white/90">Kundeudtalelser</a>
+        <a href="https://eventzonen.dk/flowandgreen" target="_blank" rel="noopener" class="rounded-full bg-white text-ink px-4 py-2 font-semibold hover:bg-white/90">Send bookingforespørgsel</a>
+      </div>
+      <button id="menu-btn" class="md:hidden inline-flex items-center justify-center rounded-md p-2 ring-1 ring-white/20">
+        <span class="sr-only">Åbn menu</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </nav>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-white/10">
+      <div class="px-4 py-3 space-y-2">
+        <a href="#music" class="block py-1">Hør os</a>
+        <a href="#repertoire" class="block py-1">Repertoire</a>
+        <a href="#packages" class="block py-1">Pakker</a>
+        <a href="#testimonials" class="block py-1">Kundeudtalelser</a>
+        <a href="https://eventzonen.dk/flowandgreen" target="_blank" rel="noopener" class="block py-2 rounded-md bg-white text-ink text-center font-semibold">Send bookingforespørgsel</a>
       </div>
     </div>
-  </nav>
-
-  <!-- Main content -->
-  <header class="text-center py-12 bg-green-600 text-white">
-    <h1 class="text-4xl font-bold">Flow & Green</h1>
-    <p class="text-xl mt-4">Musik til bryllupper og fester - Coverduo fra Aarhus</p>
   </header>
 
-  <section class="container mx-auto px-6 py-12 text-center">
-    <h2 class="text-3xl font-semibold mb-6">Velkommen til Flow & Green</h2>
-    <p class="text-lg mb-8">Vi er specialiseret i at levere stemningsfyldt livemusik, der passer perfekt til dit bryllup eller arrangement.</p>
-    <a href="kontakt.html" class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700">Kontakt os</a>
-  </section>
-
-  <!-- Instagram Embed -->
-  <section class="container mx-auto px-6 py-8">
-    <h2 class="text-2xl font-semibold text-center mb-6">Følg os på Instagram</h2>
-    <div class="flex justify-center">
-      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DByM13Ho-Z8/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DByM13Ho-Z8/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DByM13Ho-Z8/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Lasse Wingreen (@flowandgreen)</a></p></div></blockquote>
-<script async src="//www.instagram.com/embed.js"></script>
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/20 via-sky-400/10 to-fuchsia-400/10"></div>
+    <div class="absolute inset-0 bg-grid opacity-40"></div>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24">
+      <div class="max-w-2xl">
+        <h1 class="font-display text-4xl sm:text-6xl font-bold leading-tight">Elegant livemusik til uforglemmelige bryllupper</h1>
+        <p class="mt-6 text-lg text-slate-200/90">Vi er <span class="font-semibold">Flow &amp; Green</span> — en duo med vokal og guitar, der leverer moderne klassikere og tidløs romantik til vielse, reception og første dans.</p>
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a href="https://eventzonen.dk/flowandgreen" target="_blank" rel="noopener" class="rounded-full bg-white text-ink px-6 py-3 font-semibold hover:bg-white/90 shadow-soft">Send bookingforespørgsel</a>
+          <a href="#music" class="rounded-full ring-1 ring-white/30 px-6 py-3 hover:bg-white/5">Hør os</a>
+        </div>
+        <div class="mt-10 flex items-center gap-6 text-slate-300/80">
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.88 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <span>100% live • ingen backtracks</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M2 10a8 8 0 1116 0A8 8 0 012 10zm8-5a1 1 0 011 1v3h3a1 1 0 110 2h-4a1 1 0 01-1-1V6a1 1 0 011-1z"/></svg>
+            <span>Klar på 15 minutter</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="text-center mt-4"><a href="https://instagram.com/flowandgreen" target="_blank" class="text-green-600 hover:underline">@flowandgreen</a></p>
   </section>
 
-  <footer class="text-center py-6 bg-gray-200">
-    &copy; 2025 Flow & Green. Alle rettigheder forbeholdes.
+  <!-- MUSIC / HØR OS -->
+  <section id="music" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+    <div class="grid lg:grid-cols-2 gap-10 items-start">
+      <div>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold">Hør os</h2>
+        <p class="mt-4 text-slate-300/90">En kort live-medley. Udskift med jeres egne links (YouTube, Vimeo eller MP3-filer).</p>
+        <div class="mt-6 space-y-4">
+          <audio controls class="w-full rounded-lg ring-1 ring-white/20">
+            <source src="/assets/sample.mp3" type="audio/mpeg">
+          </audio>
+          <div class="aspect-video rounded-xl overflow-hidden ring-1 ring-white/20">
+            <iframe class="w-full h-full" src="https://www.youtube.com/embed/ysz5S6PUM-U" title="Demo" allowfullscreen></iframe>
+          </div>
+          <div class="pt-2">
+            <a href="https://www.youtube.com/@flowandgreen" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full ring-1 ring-white/30 px-5 py-2 hover:bg-white/5">
+              <span>Besøg vores YouTube-kanal</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M10 15l5.19-3L10 9v6z"/><path d="M21 8s-.2-1.43-.82-2.06C19.33 5 18.5 5 18.09 5h-12C5.68 5 4.86 5 4.34 5.94 3.8 6.58 3.8 8 3.8 8s-.2 1.64-.2 3.28v1.44C3.6 14.36 3.8 16 3.8 16s.2 1.43.82 2.06C5.33 19 6.16 19 6.58 19h12c.41 0 1.24 0 1.76-.94.62-.63.66-2.06.66-2.06s.2-1.64.2-3.28V11.28C21.2 9.64 21 8 21 8z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="lg:pl-6">
+        <div class="rounded-2xl ring-1 ring-white/10 p-6 bg-white/5">
+          <h3 class="font-semibold text-xl">Vielse – highlights</h3>
+          <ul class="mt-4 space-y-2 list-disc list-inside text-slate-300/90">
+            <li>Indgang: <em>Make You Feel My Love</em></li>
+            <li>Underskrifter: <em>Better Together</em></li>
+            <li>Udgang: <em>Here Comes The Sun</em></li>
+          </ul>
+          <p class="mt-6 text-sm text-slate-400">Vi lærer gerne jeres særlige sang til indgang eller første dans.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPERTOIRE -->
+  <section id="repertoire" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+    <h2 class="font-display text-3xl sm:text-4xl font-bold">Repertoire</h2>
+    <p class="mt-4 text-slate-300/90 max-w-2xl">En blanding af moderne pop, soul og gyldne klassikere — perfekt til vielse, champagne-time og middagen.</p>
+    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      <div class="rounded-lg ring-1 ring-white/10 p-4 bg-white/5">A Thousand Years — Christina Perri</div>
+      <div class="rounded-lg ring-1 ring-white/10 p-4 bg-white/5">All of Me — John Legend</div>
+      <div class="rounded-lg ring-1 ring-white/10 p-4 bg-white/5">Make You Feel My Love — Adele</div>
+      <div class="rounded-lg ring-1 ring-white/10 p-4 bg-white/5">Perfect — Ed Sheeran</div>
+      <div class="rounded-lg ring-1 ring-white/10 p-4 bg-white/5">Stand By Me — Ben E. King</div>
+      <div class="rounded-lg ring-1 ring-white/10 p-4 bg-white/5">Can’t Help Falling In Love — Elvis</div>
+    </div>
+  </section>
+
+  <!-- PAKKER -->
+  <section id="packages" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+    <h2 class="font-display text-3xl sm:text-4xl font-bold">Pakker</h2>
+    <div class="mt-8 grid md:grid-cols-3 gap-6">
+      <div class="rounded-2xl ring-1 ring-white/10 p-6 bg-white/5">
+        <h3 class="font-semibold text-xl">Vielse</h3>
+        <p class="mt-2 text-slate-300/90">Indgangs-, underskrifts- og udgangssange</p>
+        <p class="mt-4 text-3xl font-bold">4.500 kr.</p>
+      </div>
+      <div class="rounded-2xl ring-2 ring-white p-6 bg-white/10">
+        <h3 class="font-semibold text-xl">Champagne-time</h3>
+        <p class="mt-2 text-slate-300/90">60–90 min. baggrundsmusik</p>
+        <p class="mt-4 text-3xl font-bold">6.500 kr.</p>
+      </div>
+      <div class="rounded-2xl ring-1 ring-white/10 p-6 bg-white/5">
+        <h3 class="font-semibold text-xl">Vielse + Champagne</h3>
+        <p class="mt-2 text-slate-300/90">Kombination – spar penge</p>
+        <p class="mt-4 text-3xl font-bold">9.500 kr.</p>
+      </div>
+    </div>
+    <p class="mt-4 text-slate-400 text-sm">Kørsel uden for Nordjylland aftales separat.</p>
+  </section>
+
+  <!-- UDTALERSER -->
+  <section id="testimonials" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+    <h2 class="font-display text-3xl sm:text-4xl font-bold">Kundeudtalelser</h2>
+    <div class="mt-8 grid md:grid-cols-3 gap-6">
+      <figure class="rounded-2xl ring-1 ring-white/10 p-6 bg-white/5">
+        <blockquote class="text-slate-200">“I gjorde vores ceremoni magisk. Flere gæster havde tårer i øjnene.”</blockquote>
+        <figcaption class="mt-4 text-slate-400 text-sm">— Maria &amp; Jonas, 2024</figcaption>
+      </figure>
+      <figure class="rounded-2xl ring-1 ring-white/10 p-6 bg-white/5">
+        <blockquote class="text-slate-200">“Professionelle, varme og simpelthen smukt. Kan varmt anbefales.”</blockquote>
+        <figcaption class="mt-4 text-slate-400 text-sm">— Sofie &amp; Emil, 2025</figcaption>
+      </figure>
+      <figure class="rounded-2xl ring-1 ring-white/10 p-6 bg-white/5">
+        <blockquote class="text-slate-200">“Den perfekte lyd til vores champagne-time.”</blockquote>
+        <figcaption class="mt-4 text-slate-400 text-sm">— Camilla &amp; Mark, 2023</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="contact" class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-20">
+    <div class="rounded-2xl ring-1 ring-white/10 p-8 bg-white/5">
+      <h2 class="font-display text-3xl sm:text-4xl font-bold">Kontakt os</h2>
+      <p class="mt-3 text-slate-300/90">Fortæl os om dato, sted og ønsker. Vi vender typisk tilbage inden for 24 timer.</p>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="mt-8 grid sm:grid-cols-2 gap-4">
+        <div>
+          <label class="text-sm text-slate-300" for="name">Navn</label>
+          <input id="name" name="name" required class="mt-1 w-full rounded-md bg-white/10 ring-1 ring-white/20 p-3 focus:outline-none focus:ring-white/40" placeholder="Fulde navn">
+        </div>
+        <div>
+          <label class="text-sm text-slate-300" for="email">Email</label>
+          <input id="email" name="email" type="email" required class="mt-1 w-full rounded-md bg-white/10 ring-1 ring-white/20 p-3 focus:outline-none focus:ring-white/40" placeholder="flowandgreen@gmail.com">
+        </div>
+        <div class="sm:col-span-2">
+          <label class="text-sm text-slate-300" for="date">Bryllupsdato</label>
+          <input id="date" name="date" type="date" class="mt-1 w-full rounded-md bg-white/10 ring-1 ring-white/20 p-3 focus:outline-none focus:ring-white/40">
+        </div>
+        <div class="sm:col-span-2">
+          <label class="text-sm text-slate-300" for="message">Besked</label>
+          <textarea id="message" name="message" rows="4" class="mt-1 w-full rounded-md bg-white/10 ring-1 ring-white/20 p-3 focus:outline-none focus:ring-white/40" placeholder="Sted, tidsplan, særlige sange …"></textarea>
+        </div>
+        <div class="sm:col-span-2 grid gap-3">
+          <button class="w-full rounded-full bg-white text-ink px-6 py-3 font-semibold hover:bg-white/90 shadow-soft">Send</button>
+          <a href="https://eventzonen.dk/flowandgreen" target="_blank" rel="noopener" class="w-full text-center rounded-full ring-1 ring-white/30 px-6 py-3 hover:bg-white/5">Eller send bookingforespørgsel via Eventzonen</a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10 py-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-slate-400 text-sm">© <span id="year"></span> Flow &amp; Green. Alle rettigheder forbeholdes.</p>
+      <div class="flex items-center gap-4 text-slate-400 text-sm">
+        <a href="https://www.instagram.com/flowandgreen/" aria-label="Instagram" class="hover:text-white/90" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10zm6-1a1 1 0 110 2 1 1 0 010-2zM12 9a3 3 0 100 6 3 3 0 000-6z"/></svg>
+        </a>
+        <a href="mailto:flowandgreen@gmail.com" class="hover:text-white/90">flowandgreen@gmail.com</a>
+      </div>
+    </div>
   </footer>
+
+  <script src="/assets/site.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
