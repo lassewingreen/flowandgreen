@@ -30,12 +30,18 @@
   </script>
 </head>
 <body class="bg-ink text-slate-100 font-body">
+  <!-- Global gradient background -->
+  <div class="fixed inset-0 -z-50 bg-gradient-to-br from-[#0B1020] to-[#6BA1FA]"></div>
+  <div class="fixed inset-0 -z-40 bg-grid opacity-30 pointer-events-none"></div>
+
+
   <!-- NAV -->
   <header class="sticky top-0 z-40 backdrop-blur border-b border-white/10">
     <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
       <a href="#" class="flex items-center gap-3">
         <img src="/assets/logo.svg" alt="Flow &amp; Green" class="h-8 w-auto">
       </a>
+      
       <div class="hidden md:flex items-center gap-8 text-sm">
         <a href="#music" class="hover:text-white/90">Hør os</a>
         <a href="#repertoire" class="hover:text-white/90">Repertoire</a>
@@ -59,14 +65,18 @@
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO (unchanged text; slider added alongside) -->
   <section class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/20 via-sky-400/10 to-fuchsia-400/10 pointer-events-none"></div>
-    <div class="absolute inset-0 bg-grid opacity-40 pointer-events-none"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent pointer-events-none"></div>
+    <div class="absolute inset-0 bg-grid opacity-30 pointer-events-none"></div>
+
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24">
-      <div class="max-w-2xl">
-        <h1 class="font-display text-4xl sm:text-6xl font-bold leading-tight">Livemusik til uforglemmelige fester</h1>
-        <p class="mt-6 text-lg text-slate-200/90">Vi er <span class="font-semibold">Flow &amp; Green</span> — en duo med dobbelt vokal, cajun tromme og guitar, der leverer moderne klassikere og evergreens til alle festlige begivenheder.</p>
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <!-- Original text block (unchanged) -->
+        <div>
+          <div class="max-w-2xl">
+            <h1 class="font-display text-4xl sm:text-6xl font-bold leading-tight">Livemusik til uforglemmelige fester</h1>
+            <p class="mt-6 text-lg text-slate-200/90">Vi er <span class="font-semibold">Flow &amp; Green</span> — en duo med dobbelt vokal, cajun tromme og guitar, der leverer moderne klassikere og evergreens til alle festlige begivenheder.</p>
 <div class="mt-8 flex flex-wrap items-center gap-4">
   <a href="https://m.me/122356024496820" target="_blank" rel="noopener" class="flex items-center gap-2 rounded-full bg-white text-ink px-6 py-3 font-semibold hover:bg-white/90 shadow-soft">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 512 512" fill="currentColor">
@@ -77,21 +87,55 @@
   <a href="https://eventzonen.dk/flowandgreen" target="_blank" rel="noopener" class="rounded-full bg-white text-ink px-6 py-3 font-semibold hover:bg-white/90 shadow-soft">Send bookingforespørgsel</a>
   <a href="#music" class="rounded-full ring-1 ring-white/30 px-6 py-3 hover:bg-white/5">Hør os</a>
 </div>
-        <div class="mt-10 flex items-center gap-6 text-slate-300/80">
-          <div class="flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.88 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <span>100% live • ingen backtracks</span>
+            <div class="mt-10 flex items-center gap-6 text-slate-300/80">
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.88 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <span>100% live • ingen backtracks</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M2 10a8 8 0 1116 0A8 8 0 012 10zm8-5a1 1 0 011 1v3h3a1 1 0 110 2h-4a1 1 0 01-1-1V6a1 1 0 011-1z"/></svg>
+                <span>Klar på 20 minutter</span>
+              </div>
+            </div>
           </div>
-          <div class="flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M2 10a8 8 0 1116 0A8 8 0 012 10zm8-5a1 1 0 011 1v3h3a1 1 0 110 2h-4a1 1 0 01-1-1V6a1 1 0 011-1z"/></svg>
-            <span>Klar på 20 minutter</span>
+        </div>
+
+        <!-- Slider (new, no visible text) -->
+        <div>
+          <div id="hero-slider" class="relative h-[50vh] sm:h-[60vh] lg:h-[70vh] w-full overflow-hidden rounded-3xl shadow-soft" data-autoplay="5000">
+            <div class="slide is-active">
+              <img src="assets/_DSF9314 2.jpeg">
+            </div>
+            <div class="slide">
+              <img src="assets/IMG_2304.JPG" alt="" class="absolute inset-0 h-full w-full object-cover">
+            </div>
+            <div class="slide">
+              <img src="assets/_DSF9280.jpeg" alt="" class="absolute inset-0 h-full w-full object-cover">
+            </div>
+            <div class="slide">
+              <img src="assets/_DSF9252.jpeg" alt="" class="absolute inset-0 h-full w-full object-cover">
+            </div>
+            <div class="slide">
+              <img src="assets/_DSF2016.jpeg" alt="" class="absolute inset-0 h-full w-full object-cover">
+            </div>
+
+            <!-- Overlays -->
+            <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(1000px_500px_at_10%_-20%,rgba(255,255,255,0.22),transparent_60%),radial-gradient(700px_350px_at_90%_10%,rgba(255,255,255,0.12),transparent_55%),linear-gradient(to_top,rgba(0,0,0,0.55),rgba(0,0,0,0.2),rgba(0,0,0,0.05))]"></div>
+            <div class="pointer-events-none absolute inset-0 opacity-[0.06] mix-blend-overlay bg-grid"></div>
+
+            <!-- Controls -->
+            <button class="slider-prev absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/40 p-3 backdrop-blur hover:bg-black/60 focus:outline-none focus:ring-2 focus:ring-white/60" aria-label="Forrige">‹</button>
+            <button class="slider-next absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/40 p-3 backdrop-blur hover:bg-black/60 focus:outline-none focus:ring-2 focus:ring-white/60" aria-label="Næste">›</button>
+
+            <!-- Dots -->
+            <div class="slider-dots absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2"></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- MUSIC / HØR OS -->
+  <!-- MUSIC / HØR OS (unchanged) -->
   <section id="music" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
     <div class="grid lg:grid-cols-2 gap-10 items-start">
       <div>
@@ -129,7 +173,7 @@
     </div>
   </section>
 
-  <!-- REPERTOIRE -->
+  <!-- REPERTOIRE (unchanged) -->
   <section id="repertoire" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
     <h2 class="font-display text-3xl sm:text-4xl font-bold">Repertoire</h2>
     <p class="mt-4 text-slate-300/90 max-w-2xl">Vores repertoire på over 300 sange er en blanding af moderne pop, soul og gyldne klassikere — perfekt til din reception, middag eller fest.</p>
@@ -144,7 +188,7 @@
     </div>
   </section>
 
-  <!-- PAKKER -->
+  <!-- PAKKER (unchanged) -->
   <section id="packages" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
     <h2 class="font-display text-3xl sm:text-4xl font-bold">Pakker</h2>
     <div class="mt-8 grid md:grid-cols-3 gap-6">
@@ -167,7 +211,7 @@
     <p class="mt-4 text-slate-400 text-sm">Kørsel inkluderes i vores tilbud.</p>
   </section>
 
-  <!-- UDTALERSER -->
+  <!-- UDTALERSER (unchanged) -->
   <section id="testimonials" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
     <h2 class="font-display text-3xl sm:text-4xl font-bold">Kundeudtalelser</h2>
     <div class="mt-8 grid md:grid-cols-3 gap-6">
@@ -197,7 +241,7 @@
     </div>
   </section>
 
-  <!-- KONTAKT -->
+  <!-- KONTAKT (unchanged) -->
 <section id="contact" class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-20">
   <div class="rounded-2xl ring-1 ring-white/10 p-8 bg-white/5">
     <h2 class="font-display text-3xl sm:text-4xl font-bold">Kontakt os</h2>
@@ -233,8 +277,6 @@
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
     <p class="text-slate-400 text-sm">© <span id="year"></span> Flow &amp; Green. Alle rettigheder forbeholdes.</p>
     <div class="flex items-center gap-4 text-slate-400 text-sm">
-
-      
       <a href="https://m.me/122356024496820" aria-label="Messenger" class="hover:text-white/90" target="_blank" rel="noopener">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 512 512" fill="currentColor">
           <path d="M256 0C114.624 0 0 109.248 0 245.248c0 76.896 38.4 145.248 100.352 189.6V512l91.328-49.856c20.8 5.76 43.008 8.96 64.32 8.96 141.376 0 256-109.248 256-245.248S397.376 0 256 0zm27.52 293.248l-54.56-58.88-137.6 58.88 160.64-173.92 58.56 64.896 134.72-64.896-161.76 173.92z"/>
@@ -254,4 +296,3 @@
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
-</div>
