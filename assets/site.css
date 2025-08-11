@@ -4,3 +4,26 @@
   background-image: radial-gradient(rgba(255,255,255,.08) 1px, transparent 1px);
   background-size: 20px 20px;
 }
+
+/* Floating IG button */
+.ig-fab {
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.1);
+  backdrop-filter: blur(8px);
+  transition: background .2s ease, border-color .2s ease;
+}
+.ig-fab:hover { background: rgba(255,255,255,.18); border-color: rgba(255,255,255,.35); }
+
+/* Slider */
+#hero-slider .slide { opacity: 0; transform: scale(1.01); }
+#hero-slider .slide.is-active { opacity: 1; transform: scale(1); }
