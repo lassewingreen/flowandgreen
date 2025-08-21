@@ -29,14 +29,29 @@
   }
   </script>
 </head>
+
 <body class="bg-ink text-slate-100 font-body">
-  <!-- Global gradient background -->
+  <!-- SVG sprite (stars for testimonials) -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+    <symbol id="icon-star" viewBox="0 0 20 20">
+      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 0 0 .95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 0 0-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 0 0-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 0 0-.364-1.118L2.88 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 0 0 .951-.69l1.07-3.292z"/>
+    </symbol>
+  </svg>
+
+  <!-- Global gradient background (beholdt som i din nuværende side) -->
   <div class="fixed inset-0 -z-50 bg-gradient-to-br from-[#0B1020] to-[#6BA1FA]"></div>
   <div class="fixed inset-0 -z-40 bg-grid opacity-30 pointer-events-none"></div>
 
+  <!-- (Valgfri) Floating Instagram CTA – ikon-only -->
+  <a href="https://www.instagram.com/flowandgreen/" class="ig-fab" target="_blank" rel="noopener" aria-hidden="true">
+    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10zm6-1a1 1 0 110 2 1 1 0 010-2zM12 9a3 3 0 100 6 3 3 0 000-6z"/>
+    </svg>
+  </a>
 
   <!-- NAV -->
-  <header class="sticky top-0 z-40 backdrop-blur border-b border-white/10">
+   
+  <header class="site-header sticky top-0 z-40 backdrop-blur border-b border-white/10 transition-colors">
     <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
       <a href="#" class="flex items-center gap-3">
         <img src="/assets/logo.svg" alt="Flow &amp; Green" class="h-8 w-auto">
@@ -65,15 +80,15 @@
     </div>
   </header>
 
-  <!-- HERO (unchanged text; slider added alongside) -->
+  <!-- HERO (tekst uændret) -->
   <section class="relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent pointer-events-none"></div>
     <div class="absolute inset-0 bg-grid opacity-30 pointer-events-none"></div>
 
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24">
       <div class="grid lg:grid-cols-2 gap-10 items-center">
-        <!-- Original text block (unchanged) -->
-        <div>
+        <!-- Tekst (uændret) -->
+        <div class="reveal">
           <div class="max-w-2xl">
             <h1 class="font-display text-4xl sm:text-6xl font-bold leading-tight">Livemusik til uforglemmelige fester</h1>
             <p class="mt-6 text-lg text-slate-200/90">Vi er <span class="font-semibold">Flow &amp; Green</span> — en duo med dobbelt vokal, cajun tromme og guitar, der leverer moderne klassikere og evergreens til alle festlige begivenheder.</p>
@@ -100,27 +115,26 @@
           </div>
         </div>
 
-        <!-- Slider (new, no visible text) -->
-        <div>
-          <!-- The data-autoplay attribute sets the slider to automatically advance every 5000ms (5 seconds) -->
-          <div id="hero-slider" class="relative h-[50vh] sm:h-[60vh] lg:h-[70vh] w-full overflow-hidden rounded-3xl shadow-soft" data-autoplay="5000">
+        <!-- Slider (ingen ny tekst) -->
+        <div class="reveal">
+          <div id="hero-slider" class="relative h-[50vh] sm:h-[60vh] lg:h-[70vh] w-full overflow-hidden rounded-3xl shadow-soft" data-autoplay="5000" tabindex="0">
             <div class="slide is-active">
-              <img src="assets/DSF9314.jpeg" alt="" class="absolute inset-0 h-full w-full object-cover">
+              <img src="assets/DSF9314.jpeg" alt="" class="absolute inset-0 h-full w-full object-cover" loading="eager" fetchpriority="high" decoding="async" draggable="false">
             </div>
             <div class="slide">
-              <img src="assets/IMG_2304.JPG" alt="" class="absolute inset-0 h-full w-full object-cover">
+              <img src="assets/IMG_2304.JPG" alt="" class="absolute inset-0 h-full w-full object-cover" loading="lazy" decoding="async" draggable="false">
             </div>
             <div class="slide">
-              <img src="assets/DSF9280.jpeg" alt="" class="absolute inset-0 h-full w-full object-cover">
+              <img src="assets/DSF9280.jpeg" alt="" class="absolute inset-0 h-full w-full object-cover" loading="lazy" decoding="async" draggable="false">
             </div>
             <div class="slide">
-              <img src="assets/DSF9252.jpeg" alt="" class="absolute inset-0 h-full w-full object-cover">
+              <img src="assets/DSF9252.jpeg" alt="" class="absolute inset-0 h-full w-full object-cover" loading="lazy" decoding="async" draggable="false">
             </div>
             <div class="slide">
-              <img src="assets/IMG_6634.jpeg" alt="" class="absolute inset-0 h-full w-full object-cover">
+              <img src="assets/IMG_6634.jpeg" alt="" class="absolute inset-0 h-full w-full object-cover" loading="lazy" decoding="async" draggable="false">
             </div>
             <div class="slide">
-              <img src="assets/DSF2016.jpeg" alt="Two men dressed in white shirts and dark pants sit relaxed on a modern gray sofa with a wooden acoustic guitar placed upright between them. The setting is a warmly lit room with wooden floors, minimalist decor, and a soft, inviting atmosphere. The mood is casual and friendly." class="absolute inset-0 h-full w-full object-cover">
+              <img src="assets/DSF2016.jpeg" alt="" class="absolute inset-0 h-full w-full object-cover" loading="lazy" decoding="async" draggable="false">
             </div>
 
             <!-- Overlays -->
@@ -139,14 +153,14 @@
     </div>
   </section>
 
-  <!-- MUSIC / HØR OS (unchanged) -->
-  <section id="music" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+  <!-- MUSIC / HØR OS -->
+  <section id="music" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 reveal scroll-mt-24">
     <div class="grid lg:grid-cols-2 gap-10 items-start">
       <div>
         <h2 class="font-display text-3xl sm:text-4xl font-bold">Hør os</h2>
         <p class="mt-4 text-slate-300/90">Et live-medley:</p>
         <div class="mt-6 space-y-4">
-          <audio controls class="w-full rounded-lg ring-1 ring-white/20">
+          <audio controls preload="metadata" class="w-full rounded-lg ring-1 ring-white/20">
             <source src="/assets/Flow & Green - Medley Mix 1.mp3" type="audio/mpeg">
           </audio>
           <div class="aspect-video rounded-xl overflow-hidden ring-1 ring-white/20">
@@ -177,8 +191,8 @@
     </div>
   </section>
 
-  <!-- REPERTOIRE (unchanged) -->
-  <section id="repertoire" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+  <!-- REPERTOIRE -->
+  <section id="repertoire" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 reveal scroll-mt-24">
     <h2 class="font-display text-3xl sm:text-4xl font-bold">Repertoire</h2>
     <p class="mt-4 text-slate-300/90 max-w-2xl">Vores repertoire på over 300 sange er en blanding af moderne pop, soul og gyldne klassikere — perfekt til din reception, middag eller fest.</p>
     <p class="mt-4 text-slate-300/90 max-w-2xl">Vi modtager meget gerne ønsker og spiller direkte fra blad, så længe vi kender sangen på forhånd.</p>
@@ -192,8 +206,8 @@
     </div>
   </section>
 
-  <!-- PAKKER (unchanged) -->
-  <section id="packages" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+  <!-- PAKKER -->
+  <section id="packages" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 reveal scroll-mt-24">
     <h2 class="font-display text-3xl sm:text-4xl font-bold">Pakker</h2>
     <div class="mt-8 grid md:grid-cols-3 gap-6">
       <div class="rounded-2xl ring-1 ring-white/10 p-6 bg-white/5">
@@ -215,38 +229,50 @@
     <p class="mt-4 text-slate-400 text-sm">Kørsel inkluderes i vores tilbud.</p>
   </section>
 
-  <!-- UDTALERSER (unchanged) -->
-  <section id="testimonials" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+  <!-- UDTALERSER (5 stjerner tilføjet; tekst intakt) -->
+  <section id="testimonials" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 reveal scroll-mt-24">
     <h2 class="font-display text-3xl sm:text-4xl font-bold">Kundeudtalelser</h2>
     <div class="mt-8 grid md:grid-cols-3 gap-6">
       <figure class="rounded-2xl ring-1 ring-white/10 p-6 bg-white/5">
-      <h3 class="font-semibold text-xl mb-2">JA TAK!!!</h3>
-      <blockquote class="text-slate-200">“Flow & Green spillede til vores firmajulefrokost i fire timer. Det var mega godt! Der var total 'sing-along'-stemning med julehits og kendte klassikere - præcis som vi havde ønsket os. De er utrolig dygtige musikere, som formåede at skabe en helt unik stemning. Jeg kan på det varmeste anbefale dem!”</blockquote>
-      <figcaption class="mt-4 text-slate-400 text-sm">— Ane Lorentzen, 2024</figcaption>
+        <h3 class="font-semibold text-xl mb-2">JA TAK!!!</h3>
+        <div class="stars" aria-hidden="true">
+          <svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg>
+        </div>
+        <blockquote class="text-slate-200">“Flow & Green spillede til vores firmajulefrokost i fire timer. Det var mega godt! Der var total 'sing-along'-stemning med julehits og kendte klassikere - præcis som vi havde ønsket os. De er utrolig dygtige musikere, som formåede at skabe en helt unik stemning. Jeg kan på det varmeste anbefale dem!”</blockquote>
+        <figcaption class="mt-4 text-slate-400 text-sm">— Ane Lorentzen, 2024</figcaption>
       </figure>
       <figure class="rounded-2xl ring-1 ring-white/10 p-6 bg-white/5">
-      <h3 class="font-semibold text-xl mb-2">Helt igennem fantastisk!</h3>
-      <blockquote class="text-slate-200">“Vi havde Flow & Green til at spille til vores bryllupsreception, og de var for vilde! Musikken lød mega godt, og de spillede både nye hits og gamle klassikere, så der var noget for alle. Vi kan virkelig anbefale Flow & Green. De gjorde vores dag endnu mere speciel!”</blockquote>
-      <figcaption class="mt-4 text-slate-400 text-sm">— Søren Rasmussen, 2024</figcaption>
+        <h3 class="font-semibold text-xl mb-2">Helt igennem fantastisk!</h3>
+        <div class="stars" aria-hidden="true">
+          <svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg>
+        </div>
+        <blockquote class="text-slate-200">“Vi havde Flow & Green til at spille til vores bryllupsreception, og de var for vilde! Musikken lød mega godt, og de spillede både nye hits og gamle klassikere, så der var noget for alle. Vi kan virkelig anbefale Flow & Green. De gjorde vores dag endnu mere speciel!”</blockquote>
+        <figcaption class="mt-4 text-slate-400 text-sm">— Søren Rasmussen, 2024</figcaption>
       </figure>
       <figure class="rounded-2xl ring-1 ring-white/10 p-6 bg-white/5">
-      <h3 class="font-semibold text-xl mb-2">Thumbs Up fra gæster, køkkenpersonale og os selv :)</h3>
-      <blockquote class="text-slate-200">“Flow & Green spillede til min kones 50 års fødselsdag. Vi fandt dem på Eventzonen og kunne rigtig godt lide de uploadede videoer. Vi fandt lidt flere videoer på YouTube. Flow & Green lyder lige så godt som på videoerne. De har deres egen lyd og flere egne fortolkninger som er ret fede. Der var en meget fin balance mellem at vores gæster sad og lyttede (vippede med) og indtog dansegulvet. Vi blev spurgt om musikønsker op til festen men valgte at begrænse det og lade Flow & Green mærke efter på dagen. Det virkede godt bl.a. fordi vores gæster ikke var nærige med musikønsker og ønskerne blev efterlevet. Skulle vi have gjort det om - havde vi booket Flow & Green igen.”</blockquote>
-      <figcaption class="mt-4 text-slate-400 text-sm">— Ole Kimose, 2021</figcaption>
+        <h3 class="font-semibold text-xl mb-2">Thumbs Up fra gæster, køkkenpersonale og os selv :)</h3>
+        <div class="stars" aria-hidden="true">
+          <svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg>
+        </div>
+        <blockquote class="text-slate-200">“Flow & Green spillede til min kones 50 års fødselsdag. Vi fandt dem på Eventzonen og kunne rigtig godt lide de uploadede videoer. Vi fandt lidt flere videoer på YouTube. Flow & Green lyder lige så godt som på videoerne. De har deres egen lyd og flere egne fortolkninger som er ret fede. Der var en meget fin balance mellem at vores gæster sad og lyttede (vippede med) og indtog dansegulvet. Vi blev spurgt om musikønsker op til festen men valgte at begrænse det og lade Flow & Green mærke efter på dagen. Det virkede godt bl.a. fordi vores gæster ikke var nærige med musikønsker og ønskerne blev efterlevet. Skulle vi have gjort det om - havde vi booket Flow & Green igen.”</blockquote>
+        <figcaption class="mt-4 text-slate-400 text-sm">— Ole Kimose, 2021</figcaption>
       </figure>
       <figure class="rounded-2xl ring-1 ring-white/10 p-6 bg-white/5">
-      <h3 class="font-semibold text-xl mb-2">Sindsygt godt!</h3>
-      <blockquote class="text-slate-200">“Hvis vi havde den mindste tvivl om hvorvidt de to kunne spille op til dans efter middagen til vores bryllup, blev den tvivl gjort fuldt ud til skamme.
+        <h3 class="font-semibold text-xl mb-2">Sindsygt godt!</h3>
+        <div class="stars" aria-hidden="true">
+          <svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg>
+        </div>
+        <blockquote class="text-slate-200">“Hvis vi havde den mindste tvivl om hvorvidt de to kunne spille op til dans efter middagen til vores bryllup, blev den tvivl gjort fuldt ud til skamme.
   Troels og Lasse gjorde det sindssygt godt både før, under og efter middagen - langt langt væk fra suppe-, steg- og is-musik men i stedet et perfekt akustisk soundtrack til en kæmpe dag hvor der ikke er plads til middelmådighed.
   Desuden et par sympatiske fyre med dybde og kvalitet i alle retninger, ikke mindst med tanke på musikken.
   De varmeste anbefalinger herfra.”</blockquote>
-      <figcaption class="mt-4 text-slate-400 text-sm">— Morten Jørgensen, 2019</figcaption>
+        <figcaption class="mt-4 text-slate-400 text-sm">— Morten Jørgensen, 2019</figcaption>
       </figure>
     </div>
   </section>
 
-  <!-- KONTAKT (unchanged) -->
-<section id="contact" class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-20">
+  <!-- KONTAKT -->
+<section id="contact" class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-20 reveal scroll-mt-24">
   <div class="rounded-2xl ring-1 ring-white/10 p-8 bg-white/5">
     <h2 class="font-display text-3xl sm:text-4xl font-bold">Kontakt os</h2>
     <p class="mt-3 text-slate-300/90">Fortæl os om dato, sted og ønsker. Vi vender typisk tilbage inden for 24 timer.</p>

@@ -5,25 +5,38 @@
   background-size: 20px 20px;
 }
 
-/* Floating IG button */
+:root { --header-h: 64px; } /* fallback hvis JS er blokeret */
+
 .ig-fab {
   position: fixed;
   right: 1rem;
-  top: 1rem;
-  z-index: 60;
+  top: calc(var(--header-h) + 12px);  /* lige under headeren */
+  z-index: 30;                         /* under headerens z-40 */
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 44px; height: 44px;
   border-radius: 9999px;
   border: 1px solid rgba(255,255,255,.2);
   background: rgba(255,255,255,.1);
   backdrop-filter: blur(8px);
-  transition: background .2s ease, border-color .2s ease;
+  transition: top .2s ease, background .2s ease, border-color .2s ease, transform .2s ease;
 }
-.ig-fab:hover { background: rgba(255,255,255,.18); border-color: rgba(255,255,255,.35); }
+.ig-fab:hover { background: rgba(255,255,255,.18); border-color: rgba(255,255,255,.35); transform: translateY(-1px); }
+
 
 /* Slider */
 #hero-slider .slide { opacity: 0; transform: scale(1.01); }
 #hero-slider .slide.is-active { opacity: 1; transform: scale(1); }
+
+/* Reveal on scroll */
+.reveal { opacity: 0; transform: translateY(12px); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); transition: opacity .6s ease, transform .6s ease; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; }
+  .reveal.is-visible { transition: none; }
+}
+
+/* Stars */
+.stars { display: flex; gap: .25rem; margin-bottom: .5rem; }
+.stars svg { width: 18px; height: 18px; color: #FACC15; fill: currentColor; filter: drop-shadow(0 0 10px rgba(250,204,21,.15)); }

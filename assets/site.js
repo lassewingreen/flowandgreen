@@ -1,11 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.querySelector('#menu-btn');
-  const menu = document.querySelector('#mobile-menu');
+  // --- NAV + ANCHORS ---
+  const btn    = document.querySelector('#menu-btn');
+  const menu   = document.querySelector('#mobile-menu');
+  const header = document.querySelector('.site-header');
+
+  // Sæt top-afstand for IG-knap = headerhøjde + evt. åben mobilmenu
+  function setFabOffset() {
+    const headerH = header ? header.getBoundingClientRect().height : 64;
+    const menuH   = (menu && !menu.classList.contains('hidden')) ? menu.getBoundingClientRect().height : 0;
+    const total   = headerH + menuH;
+    document.documentElement.style.setProperty('--header-h', total + 'px');
+  }
+
+  // Burger toggle
   if (btn && menu) {
     btn.addEventListener('click', () => {
       menu.classList.toggle('hidden');
+      // Vent til layout er opdateret før vi måler
+      requestAnimationFrame(setFabOffset);
     });
   }
+
+  // Smooth anchor scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
@@ -16,15 +32,38 @@ document.addEventListener('DOMContentLoaded', () => {
           el.scrollIntoView({ behavior: 'smooth' });
         }
         if (menu) menu.classList.add('hidden');
+        setFabOffset();
       }
     });
   });
 
+  // Solid header baggrund på scroll for bedre kontrast
+  const solid = () => {
+    if (!header) return;
+    const y = window.scrollY || document.documentElement.scrollTop;
+    header.classList.toggle('bg-ink/60', y > 8);
+  };
+  solid();
+  window.addEventListener('scroll', solid, { passive: true });
+
+  // --- REVEAL ON SCROLL (respekterer reduced motion) ---
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!prefersReduced && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+  }
+
   // --- HERO SLIDER ---
   const slider = document.getElementById('hero-slider');
   if (slider) {
-    const slides = Array.from(slider.querySelectorAll('.slide'));
-    const dotsWrap = slider.querySelector('.slider-dots');
+    const slides  = Array.from(slider.querySelectorAll('.slide'));
+    const dotsEl  = slider.querySelector('.slider-dots');
     const prevBtn = slider.querySelector('.slider-prev');
     const nextBtn = slider.querySelector('.slider-next');
 
@@ -35,15 +74,17 @@ document.addEventListener('DOMContentLoaded', () => {
     function setActive(i) {
       slides.forEach((s, idx) => {
         s.classList.toggle('is-active', idx === i);
-        s.style.opacity = idx === i ? '1' : '0';
-        s.style.transform = idx === i ? 'scale(1)' : 'scale(1.01)';
+        s.style.opacity    = idx === i ? '1' : '0';
+        s.style.transform  = idx === i ? 'scale(1)' : 'scale(1.01)';
         s.style.transition = 'opacity 700ms ease, transform 700ms ease';
-        s.style.position = 'absolute';
-        s.style.inset = '0';
+        s.style.position   = 'absolute';
+        s.style.inset      = '0';
       });
-      if (dotsWrap) {
-        dotsWrap.querySelectorAll('button').forEach((d, di) => {
-          d.className = (di === i) ? 'h-2.5 w-2.5 rounded-full bg-white' : 'h-2.5 w-2.5 rounded-full bg-white/50 hover:bg-white/70';
+      if (dotsEl) {
+        dotsEl.querySelectorAll('button').forEach((d, di) => {
+          d.className = (di === i)
+            ? 'h-2.5 w-2.5 rounded-full bg-white'
+            : 'h-2.5 w-2.5 rounded-full bg-white/50 hover:bg-white/70';
         });
       }
     }
@@ -59,23 +100,43 @@ document.addEventListener('DOMContentLoaded', () => {
       timer = setInterval(() => go(1), delay);
     }
 
-    // Dots
-    if (dotsWrap) {
+    // Pause/play på hover/focus
+    function pause(){ if (timer) { clearInterval(timer); timer = null; } }
+    function play(){ if (!timer) { timer = setInterval(() => go(1), delay); } }
+    slider.addEventListener('mouseenter', pause);
+    slider.addEventListener('mouseleave', play);
+    slider.addEventListener('focusin', pause);
+    slider.addEventListener('focusout', play);
+
+    // Tastatur-navigation
+    slider.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }
+    });
+
+    // Dots (pagination)
+    if (dotsEl) {
       slides.forEach((_, i) => {
         const b = document.createElement('button');
-        b.setAttribute('aria-label', 'Gå til slide ' + (i + 1));
+        b.setAttribute('aria-label', 'Slide ' + (i + 1));
         b.className = 'h-2.5 w-2.5 rounded-full bg-white/50 hover:bg-white/70';
         b.addEventListener('click', () => { index = i; setActive(index); restart(); });
-        dotsWrap.appendChild(b);
+        dotsEl.appendChild(b);
       });
     }
 
-    // Buttons (optional; add if present)
+    // Knapper
     if (prevBtn) prevBtn.addEventListener('click', () => go(-1));
     if (nextBtn) nextBtn.addEventListener('click', () => go(1));
 
-    // Init
+    // Init slider
     setActive(index);
     restart();
   }
+
+  // --- INIT OFFSETS ---
+  setFabOffset();
+  window.addEventListener('resize', setFabOffset, { passive: true });
+  window.addEventListener('orientationchange', setFabOffset);
+  window.addEventListener('load', setFabOffset);
 });
