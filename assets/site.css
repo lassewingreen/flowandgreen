@@ -30,12 +30,9 @@
 #hero-slider .slide.is-active { opacity: 1; transform: scale(1); }
 
 /* Reveal on scroll */
-.reveal { opacity: 0; transform: translateY(12px); }
-.reveal.is-visible { opacity: 1; transform: translateY(0); transition: opacity .6s ease, transform .6s ease; }
-@media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; }
-  .reveal.is-visible { transition: none; }
-}
+.reveal { opacity: 1; transform: none; }
+.reveal.is-visible { opacity: 1; transform: none; transition: none; }
+
 
 /* Stars */
 .stars { display: flex; gap: .25rem; margin-bottom: .5rem; }

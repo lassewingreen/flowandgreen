@@ -50,24 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", solid, { passive: true });
 
   // --- REVEAL ON SCROLL (respekterer reduced motion) ---
-  const prefersReduced = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  ).matches;
-  if (!prefersReduced && "IntersectionObserver" in window) {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add("is-visible");
-        });
-      },
-      { threshold: 0.12 }
-    );
-    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
-  } else {
-    document
-      .querySelectorAll(".reveal")
-      .forEach((el) => el.classList.add("is-visible"));
-  }
+  document.querySelectorAll(".reveal").forEach((el) => el.classList.add("is-visible"));
+
 
   // --- HERO SLIDER ---
   const slider = document.getElementById("hero-slider");
