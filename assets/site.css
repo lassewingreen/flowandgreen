@@ -40,3 +40,16 @@
 /* Stars */
 .stars { display: flex; gap: .25rem; margin-bottom: .5rem; }
 .stars svg { width: 18px; height: 18px; color: #FACC15; fill: currentColor; filter: drop-shadow(0 0 10px rgba(250,204,21,.15)); }
+
+/* Video veil – blød overgang til site-gradient */
+.music-videos-veil {
+  background: linear-gradient(
+    to top,
+    rgba(11, 16, 32, 0.96) 0%,
+    rgba(11, 16, 32, 0.85) 35%,
+    rgba(40, 78, 140, 0.45) 60%,
+    rgba(107, 161, 250, 0.22) 78%,
+    rgba(107, 161, 250, 0.08) 88%,
+    transparent 100%
+  );
+}

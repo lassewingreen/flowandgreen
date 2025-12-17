@@ -180,15 +180,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
-    const PEEK_PX = 56; // hvor meget af næste række der skal “kigge frem”
-    const ROWS_VISIBLE = 2;
+    const PEEK_PX = 152;
+    const ROWS_VISIBLE = 1;
+
+    const labelEl = button.querySelector("[data-label]");
+    const chevEl = button.querySelector("[data-chevron]");
+
+    // Gem original overlay classes så vi kan restore dem
+    const overlayOriginalClass = overlay.className;
 
     function getColsCount() {
       const style = window.getComputedStyle(inner);
       const tpl = (style.gridTemplateColumns || "").trim();
       if (!tpl) return 1;
-      const cols = tpl.split(" ").filter(Boolean).length;
-      return Math.max(1, cols || 1);
+      return Math.max(1, tpl.split(" ").filter(Boolean).length);
     }
 
     function setCollapsedHeight() {
@@ -201,46 +206,109 @@ document.addEventListener("DOMContentLoaded", () => {
       const lastIndex = Math.min(items.length - 1, cols * ROWS_VISIBLE - 1);
       const last = items[lastIndex];
 
-      // Stabil måling (relativt til grid)
-      const height = Math.max(
+      const h = Math.max(
         240,
         Math.round(last.offsetTop + last.offsetHeight + PEEK_PX)
       );
+      container.style.maxHeight = h + "px";
+    }
 
-      container.style.maxHeight = height + "px";
+    function setOverlayCollapsed() {
+      // tilbage til veil/gradient overlay der ligger ovenpå grid
+      overlay.className = overlayOriginalClass;
+      overlay.style.background = ""; // brug Tailwind-klasserne igen
+    }
+
+    function setOverlayExpanded() {
+      // overlay skal IKKE ligge ovenpå de sidste videoer i expanded state
+      // Vi gør den "normal" i flowet under grid'et, og fjerner gradienten.
+      overlay.className =
+        "pointer-events-none mt-4 flex items-center justify-center";
+      overlay.style.background = "transparent";
+    }
+
+    function getExpandedMaxHeight() {
+      // Når overlay ligger i flow (expanded), skal maxHeight inkludere både grid + overlay
+      return inner.scrollHeight + overlay.scrollHeight;
     }
 
     function expandToFullHeight() {
-      container.style.maxHeight = inner.scrollHeight + "px";
+      // først: overlay ned under grid’et
+      setOverlayExpanded();
 
-      // iframes kan ændre højden en smule efter load
+      // så: maxHeight så alt kan være der
+      const h = getExpandedMaxHeight();
+      container.style.maxHeight = h + "px";
+
+      // iframes kan ændre højde efter load
       requestAnimationFrame(() => {
-        container.style.maxHeight = inner.scrollHeight + "px";
+        container.style.maxHeight = getExpandedMaxHeight() + "px";
       });
       setTimeout(() => {
-        container.style.maxHeight = inner.scrollHeight + "px";
+        container.style.maxHeight = getExpandedMaxHeight() + "px";
       }, 300);
     }
 
-    // Init collapsed height når layout er klar
+    function setExpandedUI(isExpanded) {
+      button.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+
+      if (labelEl)
+        labelEl.textContent = isExpanded ? "Skjul videoer" : "Vis alle videoer";
+
+      if (chevEl) {
+        chevEl.style.transform = isExpanded ? "rotate(180deg)" : "rotate(0deg)";
+        chevEl.style.transition = prefersReducedMotion
+          ? "none"
+          : "transform 200ms ease";
+      }
+    }
+
+    // init state
+    container.dataset.expanded = "0";
+    setOverlayCollapsed();
     setCollapsedHeight();
     requestAnimationFrame(setCollapsedHeight);
     window.addEventListener("load", setCollapsedHeight, { once: true });
-    window.addEventListener("resize", setCollapsedHeight, { passive: true });
+    window.addEventListener(
+      "resize",
+      () => {
+        if (container.dataset.expanded === "1") {
+          // hold korrekt højde i expanded state
+          container.style.maxHeight = getExpandedMaxHeight() + "px";
+        } else {
+          setCollapsedHeight();
+        }
+      },
+      { passive: true }
+    );
+
+    setExpandedUI(false);
 
     button.addEventListener("click", () => {
-      container.dataset.expanded = "1";
-      expandToFullHeight();
+      const isExpanded = container.dataset.expanded === "1";
 
-      overlay.style.pointerEvents = "none";
+      if (!isExpanded) {
+        container.dataset.expanded = "1";
+        expandToFullHeight();
+        setExpandedUI(true);
+      } else {
+        container.dataset.expanded = "0";
 
-      if (prefersReducedMotion) {
-        overlay.remove();
-        return;
+        // tilbage til overlay/veil ovenpå grid’et
+        setOverlayCollapsed();
+
+        // sæt collapsed height igen
+        setCollapsedHeight();
+        setExpandedUI(false);
+
+        // scroll lidt tilbage så man ikke føler man “mister” sektionen
+        const top =
+          container.getBoundingClientRect().top + window.scrollY - 120;
+        window.scrollTo({
+          top,
+          behavior: prefersReducedMotion ? "auto" : "smooth",
+        });
       }
-
-      overlay.classList.add("opacity-0", "transition-opacity", "duration-500");
-      window.setTimeout(() => overlay.remove(), 550);
     });
   })();
 
