@@ -249,79 +249,230 @@
   </section>
 
 
-  <!-- MUSIC / HØR OS -->
-  <section id="music" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 reveal scroll-mt-24">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="font-display text-3xl sm:text-4xl font-bold">Hør os</h2>
-      <p class="mt-4 text-slate-300/90">Et live-medley og et par liveoptagelser:</p>
+<!-- MUSIC / HØR OS -->
+<section id="music" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 reveal scroll-mt-24">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="font-display text-3xl sm:text-4xl font-bold">Hør os</h2>
+    <p class="mt-4 text-slate-300/90 max-w-2xl">
+      Et udvalg af liveoptagelser fra vores jobs på bryllupper, receptioner og events.
+    </p>
 
-      <div class="mt-6 space-y-4">
-        <audio controls preload="metadata" class="w-full rounded-lg ring-1 ring-white/20">
-          <source src="/assets/Flow & Green - Medley Mix 1.mp3" type="audio/mpeg">
-        </audio>
-
-        <div class="aspect-video rounded-xl overflow-hidden ring-1 ring-white/20">
-          <iframe class="w-full h-full" src="https://www.youtube.com/embed/Hxuq_dIlwbg?si=zyzgvHzIgUCou96d"
-            title="Boom Boom Boom" allowfullscreen>
-          </iframe>
+    <!-- Video-grid med "fold ud" -->
+    <div
+      id="music-videos"
+      class="mt-6 relative overflow-hidden transition-[max-height] duration-500 ease-in-out"
+      style="max-height: 560px;"
+    >
+      <div class="grid gap-4 sm:gap-6 sm:grid-cols-2" data-videos-inner>
+        <!-- 1 -->
+        <div class="aspect-video rounded-xl overflow-hidden ring-1 ring-white/20 bg-black/60">
+          <iframe
+            class="w-full h-full"
+            src="https://www.youtube-nocookie.com/embed/V8LUhAyzS6U?rel=0"
+            title="Flow &amp; Green – Video 1"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
         </div>
-
-        <div class="aspect-video rounded-xl overflow-hidden ring-1 ring-white/20">
-          <iframe class="w-full h-full" src="https://www.youtube.com/embed/V8LUhAyzS6U?si=doSADxKLWvm8iY98"
-            title="Joanna" allowfullscreen>
-          </iframe>
+        <!-- 2 -->
+        <div class="aspect-video rounded-xl overflow-hidden ring-1 ring-white/20 bg-black/60">
+          <iframe
+            class="w-full h-full"
+            src="https://www.youtube-nocookie.com/embed/nTXc2jLasTk?rel=0"
+            title="Flow &amp; Green – Video 2"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
         </div>
-
-        <div class="pt-2">
-          <a href="https://www.youtube.com/@flowandgreen" target="_blank" rel="noopener"
-            class="inline-flex items-center gap-2 rounded-full ring-1 ring-white/30 px-5 py-2 hover:bg-white/5">
-            <span>Besøg vores YouTube-kanal</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M10 15l5.19-3L10 9v6z" />
-              <path
-                d="M21 8s-.2-1.43-.82-2.06C19.33 5 18.5 5 18.09 5h-12C5.68 5 4.86 5 4.34 5.94 3.8 6.58 3.8 8 3.8 8s-.2 1.64-.2 3.28v1.44C3.6 14.36 3.8 16 3.8 16s.2 1.43.82 2.06C5.33 19 6.16 19 6.58 19h12c.41 0 1.24 0 1.76-.94.62-.63.66-2.06.66-2.06s.2-1.64.2-3.28V11.28C21.2 9.64 21 8 21 8z" />
-            </svg>
-          </a>
+        <!-- 3 -->
+        <div class="aspect-video rounded-xl overflow-hidden ring-1 ring-white/20 bg-black/60">
+          <iframe
+            class="w-full h-full"
+            src="https://www.youtube-nocookie.com/embed/tmO2kSr5Z-A?rel=0"
+            title="Flow &amp; Green – Video 3"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <!-- 4 -->
+        <div class="aspect-video rounded-xl overflow-hidden ring-1 ring-white/20 bg-black/60">
+          <iframe
+            class="w-full h-full"
+            src="https://www.youtube-nocookie.com/embed/55hYRbOOsTs?rel=0"
+            title="Flow &amp; Green – Video 4"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <!-- 5 -->
+        <div class="aspect-video rounded-xl overflow-hidden ring-1 ring-white/20 bg-black/60">
+          <iframe
+            class="w-full h-full"
+            src="https://www.youtube-nocookie.com/embed/Hxuq_dIlwbg?rel=0"
+            title="Flow &amp; Green – Video 5"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <!-- 6 -->
+        <div class="aspect-video rounded-xl overflow-hidden ring-1 ring-white/20 bg-black/60">
+          <iframe
+            class="w-full h-full"
+            src="https://www.youtube-nocookie.com/embed/RbwEQH1w2vY?rel=0"
+            title="Flow &amp; Green – Video 6"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <!-- 7 -->
+        <div class="aspect-video rounded-xl overflow-hidden ring-1 ring-white/20 bg-black/60">
+          <iframe
+            class="w-full h-full"
+            src="https://www.youtube-nocookie.com/embed/cQWwQzBzzdM?rel=0"
+            title="Flow &amp; Green – Video 7"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <!-- 8 -->
+        <div class="aspect-video rounded-xl overflow-hidden ring-1 ring-white/20 bg-black/60">
+          <iframe
+            class="w-full h-full"
+            src="https://www.youtube-nocookie.com/embed/ONgc1nw_E80?rel=0"
+            title="Flow &amp; Green – Video 8"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <!-- 9 -->
+        <div class="aspect-video rounded-xl overflow-hidden ring-1 ring-white/20 bg-black/60">
+          <iframe
+            class="w-full h-full"
+            src="https://www.youtube-nocookie.com/embed/OGhZqn3MN5k?rel=0"
+            title="Flow &amp; Green – Video 9"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <!-- 10 -->
+        <div class="aspect-video rounded-xl overflow-hidden ring-1 ring-white/20 bg-black/60">
+          <iframe
+            class="w-full h-full"
+            src="https://www.youtube-nocookie.com/embed/R6Y3tNKzxrA?rel=0"
+            title="Flow &amp; Green – Video 10"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <!-- 11 -->
+        <div class="aspect-video rounded-xl overflow-hidden ring-1 ring-white/20 bg-black/60">
+          <iframe
+            class="w-full h-full"
+            src="https://www.youtube-nocookie.com/embed/wGW2uoGRiz4?rel=0"
+            title="Flow &amp; Green – Video 11"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <!-- 12 -->
+        <div class="aspect-video rounded-xl overflow-hidden ring-1 ring-white/20 bg-black/60">
+          <iframe
+            class="w-full h-full"
+            src="https://www.youtube-nocookie.com/embed/cpNLeynOz6w?rel=0"
+            title="Flow &amp; Green – Video 12"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- REPERTOIRE -->
-  <section id="repertoire" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 reveal scroll-mt-24">
-    <h2 class="font-display text-3xl sm:text-4xl font-bold">Repertoire</h2>
-    <p class="mt-4 text-slate-300/90 max-w-2xl">
-      Vores repertoire på over 300 sange er en blanding af moderne pop, soul og gyldne klassikere — perfekt til din
-      reception, middag eller fest.
-    </p>
-    <div class="mt-4">
-      <a href="/assets/Saetliste_Flow_And_Green_v4.pdf" target="_blank"
-        class="inline-flex items-center gap-2 rounded-full bg-white text-ink px-6 py-3 text-sm font-semibold hover:bg-white/90 shadow-soft">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"
-          aria-hidden="true">
+      <!-- Gradient + CTA (Vis alle videoer) -->
+      <div
+        id="music-videos-overlay"
+        class="pointer-events-none absolute inset-x-0 bottom-0 h-32 sm:h-40 bg-gradient-to-t from-[#0B1020] via-[#0B1020]/85 to-transparent flex items-end justify-center"
+      >
+        <button
+          id="music-videos-toggle"
+          type="button"
+          class="pointer-events-auto mb-4 inline-flex items-center gap-2 rounded-full bg-white text-ink px-6 py-2 text-sm font-semibold hover:bg-white/90 shadow-soft"
+        >
+          <span>Vis alle videoer</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 9l6 6l6-6"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="pt-4">
+      <a href="https://www.youtube.com/@flowandgreen" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 rounded-full ring-1 ring-white/30 px-5 py-2 hover:bg-white/5 text-sm">
+        <span>Besøg vores YouTube-kanal</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M10 15l5.19-3L10 9v6z" />
           <path
-            d="M9 2a1 1 0 0 1 2 0v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4A1 1 0 0 1 6.293 8.293L8.5 10.5V2z" />
-          <path d="M4 14a1 1 0 0 1 1-1h10a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1z" />
+            d="M21 8s-.2-1.43-.82-2.06C19.33 5 18.5 5 18.09 5h-12C5.68 5 4.86 5 4.34 5.94 3.8 6.58 3.8 8 3.8 8s-.2 1.64-.2 3.28v1.44C3.6 14.36 3.8 16 3.8 16s.2 1.43.82 2.06C5.33 19 6.16 19 6.58 19h12c.41 0 1.24 0 1.76-.94.62-.63.66-2.06.66-2.06s.2-1.64.2-3.28V11.28C21.2 9.64 21 8 21 8z"
+          />
         </svg>
-        <span>Download fuld sætliste</span>
       </a>
     </div>
+  </div>
+</section>
 
-    <p class="mt-4 text-slate-300/90 max-w-2xl">
-      Vi modtager meget gerne ønsker og spiller direkte fra blad, så længe vi kender sangen på forhånd.
-    </p>
-    <p class="mt-4 text-slate-300/90 max-w-2xl">
-      Her er nogle enkelte eksempler:
-    </p>
-    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-      <div class="rounded-lg ring-1 ring-white/10 p-4 bg-white/5">"I'm Yours" – Jason Mraz</div>
-      <div class="rounded-lg ring-1 ring-white/10 p-4 bg-white/5">"Hallelujah" – Leonard Cohen (Jeff Buckley version)
-      </div>
-      <div class="rounded-lg ring-1 ring-white/10 p-4 bg-white/5">"Perfect" — Ed Sheeran</div>
-      <div class="rounded-lg ring-1 ring-white/10 p-4 bg-white/5">"Stand By Me" — Ben E. King</div>
-      <div class="rounded-lg ring-1 ring-white/10 p-4 bg-white/5">"Your Song" — Elton John</div>
-    </div>
-  </section>
+
+<!-- REPERTOIRE -->
+<section id="repertoire" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 reveal scroll-mt-24">
+  <h2 class="font-display text-3xl sm:text-4xl font-bold">Repertoire</h2>
+
+  <div class="mt-4 max-w-2xl rounded-2xl bg-white/5 ring-1 ring-white/10 p-5 sm:p-6">
+    <ul class="space-y-3 text-slate-300/90 text-sm sm:text-base">
+      <li class="flex gap-3">
+        <span class="mt-2 h-1.5 w-1.5 rounded-full bg-white/80 flex-shrink-0"></span>
+        <span>
+          Et repertoire på over 300 sange, der spænder fra moderne pop og soul til tidløse klassikere.
+        </span>
+      </li>
+      <li class="flex gap-3">
+        <span class="mt-2 h-1.5 w-1.5 rounded-full bg-white/80 flex-shrink-0"></span>
+        <span>
+          Fortolkninger med vores eget twist – perfekt som musikalsk ramme til reception, middag eller fest.
+        </span>
+      </li>
+      <li class="flex gap-3">
+        <span class="mt-2 h-1.5 w-1.5 rounded-full bg-white/80 flex-shrink-0"></span>
+        <span>
+          Vi spiller også gerne direkte fra blad, så længe vi kender sangen i forvejen.
+        </span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="mt-4">
+    <a
+      href="/assets/Saetliste_Flow_And_Green_v4.pdf"
+      target="_blank"
+      class="inline-flex items-center gap-2 rounded-full bg-white text-ink px-6 py-3 text-sm font-semibold hover:bg-white/90 shadow-soft"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path d="M9 2a1 1 0 0 1 2 0v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4A1 1 0 0 1 6.293 8.293L8.5 10.5V2z" />
+        <path d="M4 14a1 1 0 0 1 1-1h10a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1z" />
+      </svg>
+      <span>Download fuld sætliste</span>
+    </a>
+  </div>
+
+  <!-- evt. dine eksempel-sange nedenfor -->
+  <!--
+  <p class="mt-6 text-slate-300/90 max-w-2xl">
+    Her er nogle enkelte eksempler:
+  </p>
+  <div class="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+    ...
+  </div>
+  -->
+</section>
+
 
   <!-- BOOK OS TIL -->
   <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-20 reveal">

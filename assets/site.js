@@ -134,6 +134,62 @@ document.addEventListener('DOMContentLoaded', () => {
     restart();
   }
 
+  // --- VIDEO: "VIS ALLE VIDEOER" (music section) ---
+  (function initMusicVideosToggle() {
+    const container = document.getElementById('music-videos');
+    const overlay   = document.getElementById('music-videos-overlay');
+    const button    = document.getElementById('music-videos-toggle');
+    const inner     = container ? container.querySelector('[data-videos-inner]') : null;
+
+    if (!container || !overlay || !button || !inner) return;
+    if (container.dataset.toggleInit === '1') return;
+    container.dataset.toggleInit = '1';
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Sørg for at transition ikke føles “snappy” når reduce motion er aktiv
+    if (prefersReducedMotion) {
+      container.classList.add('transition-none');
+    }
+
+    function expandToFullHeight() {
+      // scrollHeight kan ændre sig når iframes loader -> beregn igen efter lidt tid
+      const h = inner.scrollHeight;
+      container.style.maxHeight = h + 'px';
+
+      requestAnimationFrame(() => {
+        const h2 = inner.scrollHeight;
+        container.style.maxHeight = h2 + 'px';
+      });
+
+      setTimeout(() => {
+        const h3 = inner.scrollHeight;
+        container.style.maxHeight = h3 + 'px';
+      }, 300);
+    }
+
+    button.addEventListener('click', () => {
+      expandToFullHeight();
+
+      // Fade overlay ud og fjern det, så det ikke blokerer noget
+      overlay.style.pointerEvents = 'none';
+
+      if (prefersReducedMotion) {
+        overlay.remove();
+        return;
+      }
+
+      overlay.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+      window.setTimeout(() => overlay.remove(), 550);
+    });
+
+    // Hvis layout ændrer sig efter load (fonts/iframes), hold max-height opdateret
+    window.addEventListener('load', () => {
+      // Kun hvis overlay stadig er der (altså ikke udvidet endnu)
+      if (document.body.contains(overlay)) expandToFullHeight();
+    }, { once: true });
+  })();
+
   // --- INIT OFFSETS ---
   setFabOffset();
   window.addEventListener('resize', setFabOffset, { passive: true });
