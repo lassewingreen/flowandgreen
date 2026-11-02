@@ -1,0 +1,14 @@
+/* Small flag-only language links; names remain available to screen readers. */
+header{position:relative}
+header:has(.locale-switch){padding-top:44px}
+.locale-switch{position:absolute;top:10px;right:5%;display:flex;align-items:center;gap:9px;padding:0;border:0;background:none;z-index:2}
+.locale-switch a{position:relative;display:inline-flex!important;align-items:center;justify-content:center;box-sizing:border-box;width:24px;height:24px;min-width:0;min-height:0;padding:1px!important;border:1px solid transparent;border-radius:50%;background:none;text-decoration:none;line-height:1;opacity:.75}
+.locale-switch a::before{content:"";position:absolute;inset:-7px;border-radius:50%}
+.locale-switch a[aria-current=page]{border-color:#111;opacity:1}
+.locale-switch a:hover{opacity:1}
+.locale-switch a:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.locale-switch svg{display:block;width:20px;height:20px;flex-shrink:0;border-radius:50%;overflow:hidden}
+.locale-switch span{display:none!important}
+header.site-header:has(.locale-switch){padding-top:34px;padding-bottom:0}
+.site-header .locale-switch{top:8px;color:#f5f3ed}
+@media(max-width:700px){.locale-switch{right:6%}header:has(.locale-switch){padding-top:44px}header.site-header:has(.locale-switch){padding-top:34px}}
