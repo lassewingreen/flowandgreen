@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /Backup-index.html
+Sitemap: https://flowandgreen.dk/sitemap.xml
