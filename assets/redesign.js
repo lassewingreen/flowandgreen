@@ -209,7 +209,7 @@
       const play = doc.createElement('button'); play.type = 'button'; play.className = 'video-play'; play.setAttribute('data-load-video', '');
       play.setAttribute('aria-label', english ? 'Play Flow & Green on YouTube' : 'Afspil Flow & Green på YouTube');
       const icon = doc.createElement('span'); icon.setAttribute('aria-hidden', 'true'); icon.textContent = '▶';
-      const label = doc.createElement('span'); label.textContent = english ? 'Play live video' : 'Afspil livevideo';
+      const label = doc.createElement('span'); label.textContent = english ? 'Play video' : 'Afspil video';
       play.append(icon, label); cover.append(poster, play);
       const notice = doc.createElement('p'); notice.className = 'video-notice';
       notice.append(doc.createTextNode(english ? 'Press play to allow this site to load videos from YouTube. YouTube will receive information about your visit. ' : 'Tryk afspil for at tillade, at siden indlæser videoer fra YouTube. YouTube modtager oplysninger om dit besøg. '));
@@ -246,7 +246,7 @@
       if (!consent.has('media')) return;
       const frame = doc.createElement('iframe');
       frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?rel=0&autoplay=1' + (english ? '&hl=en' : '');
-      frame.title = english ? 'Flow & Green — live performance' : 'Flow & Green — liveoptagelse';
+      frame.title = english ? 'Flow & Green — music video' : 'Flow & Green — musikvideo';
       frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; frame.allowFullscreen = true;
       frame.referrerPolicy = 'strict-origin-when-cross-origin';
       const cover = wrapper.querySelector('.video-cover');
